@@ -3,6 +3,10 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
 
 ### STS ###
 .apt_generated
