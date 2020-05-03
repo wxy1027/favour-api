@@ -10,7 +10,9 @@ import com.squareup.okhttp.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,12 +24,19 @@ import java.util.Optional;
  * @Date: Created in 2020/4/23
  * @Modified By:
  */
-@Component
 @Slf4j
+@Service
 public class WeChatService {
 
     @Autowired
-    private UserRepository userRepository;
+    private  UserRepository userRepository;
+
+    public void test() {
+        Optional<User> userOptional = userRepository.findById(1);
+        if (userOptional.isPresent()) {
+            System.out.println(userOptional.get());
+        }
+    }
 
     public Map<String, String> getSessionAndOpenId(String code) {
         Map<String, String> map = new HashMap<>(2);

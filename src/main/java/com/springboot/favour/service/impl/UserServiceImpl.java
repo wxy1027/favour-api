@@ -24,7 +24,7 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Autowired(required = false)
     private UserRepository userRepository;
     @Autowired
     private WeChatService weChatService;
